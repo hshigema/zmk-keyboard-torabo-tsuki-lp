@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
 
 / {
     combos {
@@ -82,15 +81,5 @@
 &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
             >;
         };
-    };
-
-    /* 必須プロパティ 'device' を追加し、構造を整理しました */
-    input_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&trackball>;
-        layers = <4>;
-        timeout-ms = <1000>;
-        input-processors = <&zip_xy_scaler 2 1>;
     };
 };
