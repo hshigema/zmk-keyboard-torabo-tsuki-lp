@@ -85,7 +85,8 @@
     };
 };
 
-&input_listener {
+/* このラベル名をキーボードの定義に合わせて trackball_listener に修正しました */
+&trackball_listener {
     status = "okay";
     layers = <4>;
     timeout-ms = <1000>;
