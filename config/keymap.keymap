@@ -84,10 +84,11 @@
         };
     };
 
-    /* ラベル( & )を使わず、直接定義することで「Undefined Label」を回避します */
+    /* 必須プロパティ 'device' を追加し、構造を整理しました */
     input_listener {
         compatible = "zmk,input-listener";
         status = "okay";
+        device = <&trackball>;
         layers = <4>;
         timeout-ms = <1000>;
         input-processors = <&zip_xy_scaler 2 1>;
