@@ -83,12 +83,13 @@
             >;
         };
     };
-};
 
-/* このラベル名をキーボードの定義に合わせて trackball_listener に修正しました */
-&trackball_listener {
-    status = "okay";
-    layers = <4>;
-    timeout-ms = <1000>;
-    input-processors = <&zip_xy_scaler 2 1>;
+    /* ラベル( & )を使わず、直接定義することで「Undefined Label」を回避します */
+    input_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        layers = <4>;
+        timeout-ms = <1000>;
+        input-processors = <&zip_xy_scaler 2 1>;
+    };
 };
