@@ -11,7 +11,7 @@
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>; /* ←これを追加します */
         /* ---- ここから下を追記：スクロールモードの設定 ---- */
     scroll {
-        layers = <2>; /* レイヤー1がオンの時だけ発動します */
+        layers = <2>; /* レイヤー2がオンの時だけ発動します */
         
         input-processors = 
             <&zip_xy_to_scroll_mapper>, /* ボールの動きをスクロールに変換 */
@@ -20,8 +20,8 @@
             <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
     snipe {
-        layers = <3>; /* レイヤー2がオンの時だけ発動 */
-        input-processors = <&zip_xy_scaler 1 3>; /* 速度を3分の1にする */
+        layers = <3>; /* レイヤー3がオンの時だけ発動 */
+        input-processors = <&zip_xy_scaler 1 3>, /* 速度を3分の1にする */
 
         /* ↓ ここにも通常時と同じ反転設定を追加します ↓ */
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
