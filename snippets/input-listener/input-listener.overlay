@@ -3,8 +3,9 @@
 &pointing_listener {
     status = "okay";
     device = <&pointing_device>;
-
-    /* ここから下を追記 */
-    layers = <4>;
-    input-processors = <&zip_xy_scaler 2 1>;
+    
+    /* layersプロパティを削除し、input-processorsの中に「オートマウス」と「感度変更」をまとめて書きます */
+    input-processors = 
+        <&zip_temp_layer 4 1000>, /* トラックボールを動かすと1000ミリ秒(1秒)の間、レイヤー4を有効にする */
+        <&zip_xy_scaler 2 1>;     /* マウスの感度を2倍(2/1)にする */
 };
