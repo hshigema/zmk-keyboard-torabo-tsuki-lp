@@ -83,10 +83,3 @@
         };
     };
 }; // ← ここでファイル全体（ルート）を一度完全に閉じます。
-
-/* ルートを閉じた「外側」に、ラベル設定を追記します */
-&pointing_listener {
-    status = "okay";
-    layers = <4>;
-    input-processors = <&zip_xy_scaler 2 1>;
-};
